@@ -1,0 +1,12 @@
+# ============================================
+# Python Dependencies for CareerPath AI Backend
+# ============================================
+# Install all dependencies with:
+#   pip install -r requirements.txt
+# ============================================
+
+Flask==3.1.1
+flask-cors==5.0.1
+pymongo==4.12.1
+PyJWT==2.10.1
+Werkzeug==3.1.3

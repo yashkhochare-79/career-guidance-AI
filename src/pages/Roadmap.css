@@ -1,0 +1,485 @@
+.roadmap-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ─── Header ─── */
+.roadmap-header {
+  margin-bottom: 2rem;
+}
+
+.header-text {
+  margin-bottom: 1.5rem;
+}
+
+.career-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.career-tab {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: var(--color-white);
+  color: var(--color-gray);
+  border: 1px solid var(--color-gray-light);
+  transition: all 0.25s ease;
+}
+
+.career-tab:hover {
+  border-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.career-tab.active {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  border-color: transparent;
+  box-shadow: var(--shadow-primary);
+}
+
+/* ─── Progress Overview ─── */
+.progress-overview {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.progress-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--color-light);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+}
+
+.stat-pill-label {
+  color: var(--color-gray);
+  font-weight: 500;
+}
+
+.stat-pill-value {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.progress-track {
+  position: relative;
+  height: 8px;
+  background: var(--color-gray-light);
+  border-radius: 9999px;
+  overflow: visible;
+  margin-bottom: 0.75rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: 9999px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-light);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* ─── Timeline ─── */
+.timeline-wrapper {
+  position: relative;
+  padding-left: 50px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 23px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary-light), var(--color-gray-light));
+  border-radius: 9999px;
+}
+
+.roadmap-step {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.step-node {
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.node-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.node-circle.completed {
+  background: #ECFDF5;
+  border: 2px solid #10B981;
+}
+
+.node-circle.current {
+  background: var(--color-white);
+  border: 2px solid var(--color-primary);
+  animation: pulse-glow 2s infinite;
+}
+
+.node-circle.locked {
+  background: var(--color-gray-light);
+  border: 2px solid #CBD5E1;
+}
+
+.status-icon.completed { color: #10B981; }
+.status-icon.current { color: var(--color-primary); }
+.status-icon.locked { color: #94A3B8; }
+
+/* ─── Step Card ─── */
+.step-card {
+  flex: 1;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.step-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.locked-card {
+  opacity: 0.6;
+  filter: grayscale(30%);
+}
+
+.locked-card:hover {
+  opacity: 0.7;
+}
+
+.step-card-header {
+  padding: 1.5rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.locked-card .step-card-header {
+  cursor: default;
+}
+
+.step-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-number {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.level-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.step-title {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-dark);
+}
+
+.step-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.step-duration {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--color-gray);
+  font-weight: 500;
+}
+
+.step-skill-tags {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.mini-tag {
+  padding: 0.2rem 0.5rem;
+  background: var(--color-light);
+  color: var(--color-gray);
+  border-radius: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.mini-tag.more {
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.expand-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray);
+  background: var(--color-light);
+  transition: all 0.2s ease;
+}
+
+.expand-btn:hover {
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--color-primary);
+}
+
+/* ─── Expanded Content ─── */
+.step-expanded {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--color-gray-light);
+  animation: slideDown 0.35s ease forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; max-height: 0; padding-top: 0; }
+  to { opacity: 1; max-height: 1200px; padding-top: 1.5rem; }
+}
+
+.expanded-section {
+  margin-bottom: 1.5rem;
+}
+
+.expanded-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-dark);
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-chip {
+  padding: 0.4rem 0.85rem;
+  background: rgba(79, 70, 229, 0.08);
+  color: var(--color-primary);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(79, 70, 229, 0.15);
+}
+
+/* Course Cards */
+.course-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.course-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  background: var(--color-light);
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.course-card:hover {
+  background: var(--color-white);
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-dark);
+}
+
+.course-provider {
+  font-size: 0.75rem;
+  color: var(--color-gray);
+}
+
+.course-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.course-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.external-icon {
+  color: var(--color-gray);
+}
+
+/* Project Cards */
+.project-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  background: var(--color-light);
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: var(--color-gray-light);
+  background: var(--color-white);
+}
+
+.project-name {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--color-dark);
+}
+
+.difficulty-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.step-action-btn {
+  margin-top: 0.5rem;
+  width: auto;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    padding-left: 40px;
+  }
+
+  .timeline-line {
+    left: 18px;
+  }
+
+  .node-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .career-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .career-tab {
+    white-space: nowrap;
+  }
+
+  .step-card-header {
+    padding: 1.25rem;
+  }
+  
+  .step-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .roadmap-container {
+    padding: 0;
+  }
+
+  .progress-labels {
+    display: none;
+  }
+}

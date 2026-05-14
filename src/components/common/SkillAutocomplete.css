@@ -1,0 +1,145 @@
+.autocomplete-container {
+  position: relative;
+  width: 100%;
+}
+
+.autocomplete-input-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 48px;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-gray-light);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  cursor: text;
+}
+
+.autocomplete-input-area:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  background: var(--color-white);
+}
+
+.autocomplete-input-area.has-error {
+  border-color: #EF4444;
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 1;
+}
+
+.skill-chip-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem 0.6rem;
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--color-primary);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  animation: chipIn 0.2s ease;
+}
+
+@keyframes chipIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.chip-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  opacity: 0.6;
+  transition: opacity 0.15s;
+  padding: 0;
+  margin-left: 2px;
+}
+
+.chip-remove:hover {
+  opacity: 1;
+}
+
+.autocomplete-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--color-dark);
+  padding: 0.25rem;
+  min-width: 120px;
+  flex: 1;
+}
+
+.autocomplete-input::placeholder {
+  color: #94A3B8;
+}
+
+/* Dropdown */
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-light);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+  max-height: 240px;
+  overflow-y: auto;
+  animation: dropIn 0.15s ease;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.suggestion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.suggestion-item:first-child {
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.suggestion-item:last-child {
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.suggestion-item:hover,
+.suggestion-item.highlighted {
+  background: rgba(79, 70, 229, 0.06);
+}
+
+.suggestion-text {
+  font-weight: 500;
+  color: var(--color-dark);
+  font-size: 0.9rem;
+}
+
+.suggestion-hint {
+  font-size: 0.7rem;
+  color: var(--color-gray);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.suggestion-item:hover .suggestion-hint,
+.suggestion-item.highlighted .suggestion-hint {
+  opacity: 1;
+}

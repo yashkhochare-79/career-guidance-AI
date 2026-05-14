@@ -1,0 +1,38 @@
+John Doe
+Email: john@example.com
+LinkedIn: linkedin.com/in/johndoe
+GitHub: github.com/johndoe
+
+SUMMARY
+Passionate software developer with experience in building web applications using modern technologies. Skilled in Python and JavaScript with a focus on backend development.
+
+EXPERIENCE
+Junior Backend Developer — TechCorp Inc.
+Jan 2024 - Present
+- Developed REST APIs using Python and Django framework
+- Optimized database queries resulting in 40% performance improvement
+- Implemented authentication middleware for secure API endpoints
+- Collaborated with frontend team to integrate React components
+
+PROJECTS
+Personal Blog Platform
+- Built a full-stack blog using Node.js and MongoDB
+- Deployed application to AWS using Docker containers
+
+Task Management API
+- Created RESTful API with Express.js
+- Implemented JWT authentication and role-based access
+
+EDUCATION
+B.Tech in Computer Science — MIT University
+2020 - 2024 | GPA: 8.5/10
+
+SKILLS
+- Python, JavaScript, Node.js
+- SQL, MongoDB, PostgreSQL
+- Docker, Git, REST API
+- Django, Express.js
+
+CERTIFICATIONS
+- AWS Cloud Practitioner
+- Python for Data Science (Coursera)
